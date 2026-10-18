@@ -1,13 +1,19 @@
 """Local-only demo store. No real financial information or external actions."""
 from __future__ import annotations
 import json
+import os
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
 
 SEED = Path(__file__).with_name('demo_data.json')
-DEFAULT_DB = Path(__file__).resolve().parents[1] / 'local_demo.sqlite3'
+# On Vercel, code is mounted read-only. Only /tmp is writable, and its data is
+# EPHEMERAL and may differ between instances/requests. This is a temporary
+# synthetic-data demo fallback, not persistent storage or user isolation.
+DEFAULT_DB = Path(os.getenv('CAMPUSFIN_DATABASE_PATH',
+    '/tmp/campusfin_demo.sqlite3' if os.getenv('VERCEL') else
+    str(Path(__file__).resolve().parents[1] / 'local_demo.sqlite3')))
 
 class DemoStore:
     def __init__(self, path: Path = DEFAULT_DB):

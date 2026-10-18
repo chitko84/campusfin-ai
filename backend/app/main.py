@@ -1,5 +1,6 @@
-"""CampusFin Phase 2 local-only demo API: editable synthetic records, never real funds."""
+"""CampusFin synthetic-data prototype API. Protect deployments from public writes."""
 from copy import deepcopy
+import os
 from datetime import date
 from decimal import Decimal
 from uuid import uuid4
@@ -9,9 +10,13 @@ from pydantic import BaseModel, Field, field_validator
 from .finance import forecast, compare, money, validate, net_myr, amount
 from .store import DemoStore, get_store
 
-app = FastAPI(title='CampusFin AI — Local Prototype API', version='0.3.0',
-              description='Synthetic financial data only; no authentication or public deployment.')
-app.add_middleware(CORSMiddleware, allow_origins=['http://localhost:5173', 'http://127.0.0.1:5173'],
+app = FastAPI(title='CampusFin AI — Prototype API', version='0.3.0',
+              description='Synthetic financial data only; not production authenticated; protect deployment.')
+# Add your exact Vercel frontend origin in FRONTEND_ORIGINS before deploying a separate API.
+# This is a browser access policy, NOT authentication. Do not expose unauthenticated demo writes.
+allowed_origins = ['http://localhost:5173', 'http://127.0.0.1:5173']
+allowed_origins += [origin.strip().rstrip('/') for origin in os.getenv('FRONTEND_ORIGINS', '').split(',') if origin.strip()]
+app.add_middleware(CORSMiddleware, allow_origins=allowed_origins,
                    allow_credentials=False, allow_methods=['GET','POST','PUT','DELETE'], allow_headers=['Content-Type'])
 
 class ForecastRequest(BaseModel):
@@ -100,7 +105,8 @@ def checked_save(store: DemoStore, data: dict):
 
 @app.get('/api/health')
 def health():
-    return {'status':'ok', 'demo':True, 'real_money_enabled':False, 'persistent_storage':'local_sqlite'}
+    return {'status':'ok', 'demo':True, 'real_money_enabled':False,
+            'storage_mode':'ephemeral_sqlite' if os.getenv('VERCEL') else 'local_sqlite'}
 
 @app.get('/api/demo')
 def demo(store: DemoStore=Depends(get_store)):

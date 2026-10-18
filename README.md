@@ -24,3 +24,8 @@
 - **Not implemented:** authenticated accounts, regulated financial advice, live FX quotes, bank integrations, payments, email dispatch, real financial data handling, continuous monitoring.
 
 > This ZIP is the complete source project, not a patch. Use a **new folder**, install dependencies, set `GEMINI_API_KEY` in the backend terminal if needed, and keep API on `127.0.0.1`.
+
+
+## Vercel Services deployment (monorepo)
+
+See [`VERCEL_SERVICES_SETUP.md`](VERCEL_SERVICES_SETUP.md) for the new root `vercel.json`, frontend/backend routing, environment variables, and safety warnings.
