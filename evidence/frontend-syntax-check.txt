@@ -1,0 +1,4 @@
+PhaseFour.jsx: PASS JSX parse + transpile
+PhaseThree.jsx: PASS JSX parse + transpile
+main.jsx: PASS JSX parse + transpile
+style.css: PASS balanced braces

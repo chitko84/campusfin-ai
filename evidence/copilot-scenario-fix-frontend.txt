@@ -1,0 +1,4 @@
+JSX parser: All five .jsx source files passed TypeScript JSX syntax parsing.
+CSS parser: No stylesheet parse errors.
+Full npm install / Vite build: UNVERIFIED — registry.npmjs.org EAI_AGAIN in this environment.
+Real Gemini API request: UNVERIFIED in this execution; mocked tool calls tested.

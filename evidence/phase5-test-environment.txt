@@ -1,0 +1,5 @@
+Generated 2026-10-18T19:55:09.917798+00:00 UTC
+Python 3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]
+FastAPI 0.128.2
+Pydantic 2.13.5
+pytest 9.0.2

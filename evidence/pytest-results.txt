@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- /opt/pyvenv/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-6.18.55-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.13.0', 'ddtrace': '4.4.0', 'Faker': '40.1.2', 'asyncio': '1.3.0', 'cov': '7.0.0', 'json-report': '1.5.0', 'metadata': '3.1.1'}, 'PLATFORM': 'linux/amd64', 'CI': 'true'}
+rootdir: /mnt/data/CampusFin_AI_Phase4/backend
+plugins: anyio-4.13.0, ddtrace-4.4.0, Faker-40.1.2, asyncio-1.3.0, cov-7.0.0, json-report-1.5.0, metadata-3.1.1
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 42 items
+
+tests/test_finance.py::test_normal_case_all_bills_covered PASSED         [  2%]
+tests/test_finance.py::test_delayed_funding_causes_1000_gap PASSED       [  4%]
+tests/test_finance.py::test_settled_wages_not_counted_twice PASSED       [  7%]
+tests/test_finance.py::test_normal_funding_fee_math PASSED               [  9%]
+tests/test_finance.py::test_date_override_updates_scenario_without_mutating_fixture PASSED [ 11%]
+tests/test_finance.py::test_expenses_are_counted_once_and_no_real_payment_executes PASSED [ 14%]
+tests/test_finance.py::test_reject_negative_values_and_unknown_currency PASSED [ 16%]
+tests/test_finance.py::test_unknown_item_and_invalid_scenario_rejected PASSED [ 19%]
+tests/test_finance.py::test_float_money_rejected PASSED                  [ 21%]
+tests/test_finance.py::test_api_health_and_forecast PASSED               [ 23%]
+tests/test_finance.py::test_scenario_compare PASSED                      [ 26%]
+tests/test_phase2.py::test_edit_family_funding_changes_persistent_forecast PASSED [ 28%]
+tests/test_phase2.py::test_add_then_delete_funding_and_reset PASSED      [ 30%]
+tests/test_phase2.py::test_funding_bad_dates_negative_amount_and_invalid_currency PASSED [ 33%]
+tests/test_phase2.py::test_settled_wages_cannot_be_mutated_or_removed PASSED [ 35%]
+tests/test_phase2.py::test_obligation_edit_changes_gap_and_reset_fixes_it PASSED [ 38%]
+tests/test_phase2.py::test_add_obligation_and_delete PASSED              [ 40%]
+tests/test_phase2.py::test_proof_stress_shows_real_source_breakdown PASSED [ 42%]
+tests/test_phase2.py::test_changes_survive_new_store_instance PASSED     [ 45%]
+tests/test_phase2.py::test_past_due_obligation_and_foreign_obligation_rejected PASSED [ 47%]
+tests/test_phase3.py::test_rescue_finds_shortfall_and_conditional_options PASSED [ 50%]
+tests/test_phase3.py::test_no_feasible_plan_yields_honest_gap PASSED     [ 52%]
+tests/test_phase3.py::test_covered_path_and_date_override PASSED         [ 54%]
+tests/test_phase3.py::test_simulated_comparison_equal_budget_and_correct_fees PASSED [ 57%]
+tests/test_phase3.py::test_required_sender_reverse_estimate_is_cent_accurate PASSED [ 59%]
+tests/test_phase3.py::test_transfer_invalid_input_is_rejected PASSED     [ 61%]
+tests/test_phase3.py::test_draft_edit_approval_does_not_modify_ledger PASSED [ 64%]
+tests/test_phase3.py::test_no_draft_without_shortfall_and_reset_clears_logs PASSED [ 66%]
+tests/test_phase3.py::test_client_never_exposes_money_movement_endpoints PASSED [ 69%]
+tests/test_phase4.py::test_agent_status_does_not_expose_key PASSED       [ 71%]
+tests/test_phase4.py::test_no_key_fallback_is_truthful_and_provides_computed_facts PASSED [ 73%]
+tests/test_phase4.py::test_message_cannot_settle_or_modify_ledger PASSED [ 76%]
+tests/test_phase4.py::test_untrusted_note_prompt_injection_cannot_get_extra_tool PASSED [ 78%]
+tests/test_phase4.py::test_model_function_calls_are_executed_with_fresh_backend_data PASSED [ 80%]
+tests/test_phase4.py::test_model_forged_mutation_tool_is_denied PASSED   [ 83%]
+tests/test_phase4.py::test_model_generated_unverified_numbers_get_replaced PASSED [ 85%]
+tests/test_phase4.py::test_api_rejects_invalid_dates_and_untrusted_history PASSED [ 88%]
+tests/test_phase4.py::test_readonly_tools_provide_transfers_rescue_preview_without_side_effects PASSED [ 90%]
+tests/test_phase4.py::test_invalid_model_args_refuse_unsafe_or_expensive_requests PASSED [ 92%]
+tests/test_phase4.py::test_network_outage_fails_closed_and_labels_guidance PASSED [ 95%]
+tests/test_phase4.py::test_user_record_edits_are_logged_and_agent_stays_readonly PASSED [ 97%]
+tests/test_phase4.py::test_agent_endpoint_real_function_protocol_with_mock PASSED [100%]
+
+============================== 42 passed in 1.15s ==============================

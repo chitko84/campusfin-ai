@@ -1,0 +1,4 @@
+CSS stylesheet parse errors: 0
+React JSX: TypeScript parser/transpiler — all five src files pass (main, PhaseThree, PhaseFour, Photography, WowLab).
+Full Vite build: NOT VERIFIED; npm registry unavailable in this runtime.
+Image binaries: NOT BUNDLED; photo source links and caching script retained.

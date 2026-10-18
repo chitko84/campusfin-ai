@@ -1,0 +1,4 @@
+Frontend source JSX/ESM transpilation: 6 files checked
+Import resolution: local references checked
+Static syntax result: PASS
+CSS parsed successfully with tinycss2 (syntax-level only).

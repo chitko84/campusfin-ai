@@ -1,0 +1,6 @@
+Phase 5 verification attempt: frontend dependency installation command
+  npm install --no-audit --no-fund --prefer-offline --loglevel=error
+Result: timed out after 28 seconds (exit code 124) in this container. No node_modules was produced.
+Consequences: Vite production bundling, React browser rendering, responsive screenshots, real-world network photo downloads, and live Gemini HTTP calls have NOT been independently executed in this Phase 5 environment.
+Mitigation: source-level JSX transpilation and CSS parse checks passed; user should run npm install, npm run build, and visual/browser walkthrough on Windows.
+Do NOT present this as a passed frontend build or as security certification.

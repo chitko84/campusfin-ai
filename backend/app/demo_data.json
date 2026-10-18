@@ -1,0 +1,15 @@
+{
+  "student": {"name": "Amina", "location": "Kuala Lumpur", "home_currency": "USD", "base_currency": "MYR"},
+  "as_of": "2026-10-17",
+  "opening_cash": "1200.00",
+  "rates": {"MYR": "1.00", "USD": "4.20"},
+  "funding": [
+    {"id":"family","name":"Family Remittance","amount":"350.00","currency":"USD","fee_deducted":"5.00","status":"in_transit", "arrivals":{"best":"2026-10-18","base":"2026-10-18","stress":"2026-10-28"}},
+    {"id":"scholarship","name":"Scholarship","amount":"600.00","currency":"MYR","fee_deducted":"0","status":"expected", "arrivals":{"best":"2026-10-28","base":"2026-10-28","stress":"2026-10-28"}},
+    {"id":"wages","name":"Previous Part-Time Income","amount":"450.00","currency":"MYR","fee_deducted":"0","status":"settled", "arrivals":{"best":"2026-10-14","base":"2026-10-14","stress":"2026-10-14"}}
+  ],
+  "obligations": [
+    {"id":"rent","name":"Rent","amount":"700.00","currency":"MYR","due_date":"2026-10-18","priority":1},
+    {"id":"tuition","name":"Tuition","amount":"1500.00","currency":"MYR","due_date":"2026-10-25","priority":2}
+  ]
+}

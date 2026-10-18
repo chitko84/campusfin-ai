@@ -1,0 +1,8 @@
+1. stress forecast 200 {'next_shortfall': {'obligation_id': 'tuition', 'name': 'Tuition', 'due_date': '2026-10-25', 'amount': '1000.00', 'available_before': '500.00', 'status': 'at_risk', 'explanation': 'Projected amount needed to cover obligations by this deadline; no payment is executed.'}}
+2. conditional rescue 200 {'status': 'conditional_options', 'confirmed_solution': False}
+3. no-feasible scenario 200 {'status': 'no_feasible_option', 'confirmed_solution': False}
+4. simulated equal-budget transfer 200 {'best_quote_id': 'digital_sample', 'sender_budget_usd': '350.00'}
+5. cent-accurate required sender 200 {'required_sender_budget_usd': '243.10'}
+6. save draft 201 {'status': 'draft'}
+7. locally approve draft 200 {'status': 'approved'}
+PASS: Real FastAPI TestClient walk-through. All amounts synthetic, no external transaction performed.

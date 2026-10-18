@@ -1,0 +1,7 @@
+Health: 200, response ok
+Gemini status: 200, response ok
+Offline Copilot Stress: 200, mode=offline_guide
+Blocked AI mutation: 200, mode=blocked
+Existing Rescue: 200, response ok
+Existing Quotes: 200, response ok
+Final ledger family status: in_transit (unchanged)
